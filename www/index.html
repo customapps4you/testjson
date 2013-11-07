@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="user-scalable=yes, initial-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<link rel="stylesheet" href="css/index.css" />
+<link rel="stylesheet" href="css/testjson.min.css" />
+<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css" />
+<link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" /> 
+
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"><!-- empty --></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"><!-- empty --></script>
+<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.core.min.js"></script>
+<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.calbox.min.js"></script>
+<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.datebox.min.js"></script>
+<script type="text/javascript" src="js/jquery.mobile.datebox.i18n.pt-BR.utf8.js"></script>
+
+<title>Test Json</title>
+</head>
+
+<body>
+
+<div data-role="page" id="page1">    
+	<div data-role="content">
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <div style="width: 100%; height: 130px; position: relative; ">
+                    <a href="#page2">
+						<img src="img/agendar.png" alt="image" style="position: absolute; top: 50%; left: 50%; margin-left: -65px; margin-top: -65px; width: 130px; height: 130px;">
+					</a>
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <div style="width: 100%; height: 130px; position: relative; ">
+					<a href="#">
+						<img src="img/checkin.png" alt="image" style="position: absolute; top: 50%; left: 50%; margin-left: -65px; margin-top: -65px; width: 130px; height: 130px;">
+					</a>
+				</div>
+            </div>
+            <div class="ui-block-a">
+                <div style="width: 100%; height: 130px; position: relative; ">
+                    <a href="#">
+						<img src="img/nossaequipe.png" alt="image" style="position: absolute; top: 50%; left: 50%; margin-left: -65px; margin-top: -65px; width: 130px; height: 130px;">
+					</a>
+				</div>
+            </div>
+            <div class="ui-block-b">
+                <div style="width: 100%; height: 130px; position: relative; ">
+					<a href="#">	
+						<img src="img/videostuts.png" alt="image" style="position: absolute; top: 50%; left: 50%; margin-left: -65px; margin-top: -65px; width: 130px; height: 130px;">
+					</a>
+				</div>
+            </div>
+        </div>
+		<div style="width: 288px; height: 100px; position: relative;">
+            <img src="img/face.jpg" style="position: absolute; top: 50%; left: 50%; margin-left: -125px; margin-top: -18px; width: 250px;">
+        </div>
+    </div>
+</div>
+
+<div data-role="page" id="page2">   
+	<div data-theme="a" data-role="header">
+        <a data-role="button" href="#page1" data-icon="home" data-iconpos="notext"
+        class="ui-btn-left">
+        </a>
+        <h3>
+            AGENDAR
+        </h3>
+    </div>
+	<div data-role="content">
+		
+		<div style="position: relative;">
+			<img src="img/calendar.png" alt="image" style="position: absolute; top: 50%; left: 50%; margin-left: 80px; margin-top: -10px; width: 20px; height: 20px; z-index: 1;">
+			<input name="mydate" id="mydate" type="date" data-theme="a" data-role="datebox" data-options='{"mode": "calbox"}'>
+		</div>
+		<div style="position: relative;">
+			<img src="img/clock.png" alt="image" style="position: absolute; top: 50%; left: 50%; margin-left: 80px; margin-top: -10px; width: 20px; height: 20px; z-index: 1;">
+			<input name="mydate" id="myhour" type="date" data-theme="a" data-role="datebox" data-options='{"mode": "timebox"}'/>
+		</div>
+        
+        <div style="width: 288px; height: 120px; position: relative;">
+			<a data-role="button" href="#" data-icon="arrow-l" data-iconpos="notext" class="ui-btn-left" style="top: 33%;" class="swap" onclick="swap()"><!-- --></a>
+            <img src="img/p1.jpg" style="position: absolute; top: 50%; left: 50%; margin-left: -50px; margin-top: -50px" class="profpic-show">
+            <img src="img/p2.jpg" style="position: absolute; top: 50%; left: 50%; margin-left: -50px; margin-top: -50px; display: none;" class="profpic-hide">
+			<a data-role="button" href="#" data-icon="arrow-r" data-iconpos="notext" class="ui-btn-left" style="top: 33%; left: 80%;" class="swap" onclick="swap()"><!-- --></a>
+        </div>
+		
+		<div data-theme="a" style="width: 288px; height: 100px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;" class="profpic-show">			
+			<p> - Mariazinha. </p>
+        </div>
+		
+		<div data-theme="a" style="width: 288px; height: 100px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8; display: none;" class="profpic-hide">			
+			<p> - Joaozinho. </p>
+        </div>
+		
+		<div style="width: 288px; height: 100px; position: relative;">
+			<a href="#" onclick="sendAgend()">
+				<img src="img/agendarbtn.png" style="position: absolute; top: 50%; left: 50%; margin-left: -125px; margin-top: -18px; width: 250px;">
+			</a>
+			<a href="agendconfirmed.html" data-rel="dialog" style="display: none;" id="agendconfirmed"></a>
+		</div>
+    </div>
+</div>	
+	
+</body>
+
+<script>
+	function swap(){
+		var aux1 = jQuery(".profpic-show");
+		var aux2 = jQuery(".profpic-hide");
+		
+		aux1.hide();
+		aux2.show();
+		
+		aux1.removeClass("profpic-show");
+		aux2.removeClass("profpic-hide");
+		
+		aux2.addClass("profpic-show");
+		aux1.addClass("profpic-hide");
+	}
+	
+	function clickConfirmed(){
+		jQuery("#agendconfirmed").click();
+	}
+	
+	function sendAgend(){
+		var date = jQuery("#mydate")[0].value;
+		var hour = jQuery("#myhour")[0].value;
+		
+		var data = {"date":date,"hour":hour};
+		
+		console.log(data);
+		jQuery.get("http://customapps4you.appspot.com/json/agend",data,clickConfirmed)
+	}
+</script>
+
+</html>
